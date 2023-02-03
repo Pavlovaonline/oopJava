@@ -9,10 +9,10 @@ public class RobotMap {
     private final List<Robot> robots;
 
     public RobotMap(int n, int m, int maxRobotCount) {
+        if (n>100) {n=0;};
+        if (m>100) {m=0;};
         this.n = n;
         this.m = m;
-//        if (n>100) {this.n = n;};
-//        if (m>100) {this.m = m;};
         this.robots = new ArrayList<>();
     }
 
@@ -26,7 +26,8 @@ public class RobotMap {
         }
 
         Robot robot = new Robot(robotPosition);
-        robots.add(robot);
+        if(robots.size()<10) {
+        robots.add(robot);}
         return robot;
     }
 
